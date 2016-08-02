@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opl="https://oplmetamodel.com" xsi:schemaLocation="https://oplmetamodel.com ..//OPL_Metamodel//OPLmetamodel.ecore" id="rateOpt_flowRate">
+  <data order="1">
+    <variable name="a"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body=".01"/>
+  </data>
+  <data order="2">
+    <variable name="b"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="-1.85"/>
+  </data>
+  <data order="3">
+    <variable name="c"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="174.56"/>
+  </data>
+  <data order="4">
+    <variable name="lowerLimit"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="13.27"/>
+  </data>
+  <data order="5">
+    <variable name="upperLimit"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="100"/>
+  </data>
+  <data order="6" isDecisionVar="true">
+    <variable name="waterRate"/>
+    <type xsi:type="opl:FloatType"/>
+  </data>
+  <data order="7" isDecisionExpr="true">
+    <variable name="rxRate"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="a * (b * waterRate + c) ^ 2"/>
+  </data>
+  <constraints order="1" name="Constraint1">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="greaterThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="waterRate"/>
+      <rhs xsi:type="opl:FloatExpression" body="0"/>
+      <op xsi:type="opl:RelationalOperator" op="greaterThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="2" name="Constraint2">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="waterRate"/>
+      <rhs xsi:type="opl:FloatExpression" body="100"/>
+      <op xsi:type="opl:RelationalOperator" op="greaterThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="3" name="Constraint3">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="lowerLimit "/>
+      <rhs xsi:type="opl:FloatExpression" body=" waterRate"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="4" name="Constraint4">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="greaterThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="upperLimit "/>
+      <rhs xsi:type="opl:FloatExpression" body=" waterRate"/>
+      <op xsi:type="opl:RelationalOperator" op="greaterThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <instruction order="1">
+    <expression xsi:type="opl:DataRef" name="rxRate"/>
+  </instruction>
+</opl:Model>

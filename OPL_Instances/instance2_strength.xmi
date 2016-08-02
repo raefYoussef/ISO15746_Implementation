@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ASCII"?>
+<opl:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opl="https://oplmetamodel.com" xsi:schemaLocation="https://oplmetamodel.com ..//OPL_Metamodel//OPLmetamodel.ecore" id="instance2_strength" isConstraintProblem="true">
+  <data order="1" isDecisionVar="true">
+    <variable name="Power"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="80 .. 160"/>
+  </data>
+  <data order="2" isDecisionVar="true">
+    <variable name="Speed"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="360 .. 840"/>
+  </data>
+  <data order="3" isDecisionVar="true">
+    <variable name="Thickness"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="20 .. 50"/>
+  </data>
+  <data order="4" isDecisionVar="true">
+    <variable name="Distance"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="100 .. 160"/>
+  </data>
+  <data order="5" isDecisionVar="true">
+    <variable name="Al"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="500 .. 650"/>
+  </data>
+  <data order="6" isDecisionVar="true">
+    <variable name="Va"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="350 .. 450"/>
+  </data>
+  <data order="7" isDecisionVar="true">
+    <variable name="Oxygen"/>
+    <type xsi:type="opl:IntegerRangeType">
+      <baseType xsi:type="opl:IntegerType"/>
+      <upperBound xsi:type="opl:IntegerType"/>
+      <lowerBound xsi:type="opl:IntegerType"/>
+    </type>
+    <value xsi:type="opl:DataObject" body="130 .. 170"/>
+  </data>
+  <data order="8" isDecisionExpr="true">
+    <variable name="Time"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="10.82*6+0.0125*25*5*11*11*6*0.3*1000/Thickness"/>
+  </data>
+  <data order="9" isDecisionExpr="true">
+    <variable name="Cost"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="0.0526*(6-3.97*Al*0.01+20*Va*0.01)"/>
+  </data>
+  <data order="10" isDecisionExpr="true">
+    <variable name="Energy"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="Power*20618*1000000/(Speed*Distance*Thickness)"/>
+  </data>
+  <data order="11" isDecisionExpr="true">
+    <variable name="VolumeError"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="37.1944 -0.150833*Power+0.103611*Thickness-0.451528*Distance + 0.000593750*Power*Power + 0.000111111*Thickness*Thickness+0.00169444*Distance*Distance+4.16667E-05*Power*Thickness+ 6.25000E-05*Power*Distance+0.000111111*Thickness*Distance"/>
+  </data>
+  <data order="12" isDecisionExpr="true">
+    <variable name="Strength"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="-730.849 + 0.464931*Speed + 5.72444*Thickness+17529.6*0.001*Oxygen-2.88194E-04*Speed*Speed-0.0884444*Thickness*Thickness-56125.0*0.000001*Oxygen*Oxygen+5.55556E-05*Speed*Thickness-0.802083*Speed*0.001*Oxygen+1.83333*Thickness*0.001*Oxygen"/>
+  </data>
+  <data order="13" isDecisionExpr="true">
+    <variable name="Roughness"/>
+    <type xsi:type="opl:FloatType"/>
+    <value xsi:type="opl:DataObject" body="240.897 -0.722604*Power+ 1.29167*Thickness-2.91403*Distance+0.00284375*Power*Power+0.000555556*Thickness*Thickness+0.0109444*Distance*Distance-2.91667E-04*Power*Thickness+0.000500000*Power*Distance+0.000277778*Thickness*Distance"/>
+  </data>
+  <constraints order="1" name="Constraint1">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="Time "/>
+      <rhs xsi:type="opl:FloatExpression" body=" 10500"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="2" name="Constraint2">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="Cost "/>
+      <rhs xsi:type="opl:FloatExpression" body=" 3.8"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="3" name="Constraint3">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="Energy "/>
+      <rhs xsi:type="opl:FloatExpression" body=" 730000"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="4" name="Constraint4">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="VolumeError "/>
+      <rhs xsi:type="opl:FloatExpression" body=" 5.1"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <constraints order="5" name="Constraint5">
+    <exp xsi:type="opl:RelationalExpression" body="" redefinedOp="lessThanOrEqualTo">
+      <lhs xsi:type="opl:DataRef" name="Roughness "/>
+      <rhs xsi:type="opl:FloatExpression" body=" 71.3"/>
+      <op xsi:type="opl:RelationalOperator" op="lessThanOrEqualTo"/>
+    </exp>
+  </constraints>
+  <instruction order="1">
+    <expression xsi:type="opl:DataRef" name="-Strength"/>
+  </instruction>
+</opl:Model>

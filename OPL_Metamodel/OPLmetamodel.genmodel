@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ISO15746_Implementation/src" modelPluginID="ISO15746_Implementation"
+    modelName="OPLmetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>OPLmetamodel.ecore</foreignModel>
+  <genPackages prefix="OPLmetamodel" disposableProviderFactory="true" ecorePackage="OPLmetamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//AggOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/sum"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/min"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/max"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/prod"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/inter"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/union"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/or"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//AggOp/and"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//BinaryOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/add"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/subtract"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/multiply"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/divide"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/percent"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/mod"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/inter"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/union"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/diff"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/symdiff"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//BinaryOp/power"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//LogicalOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//LogicalOp/negation"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//LogicalOp/disjunction"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//LogicalOp/or"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//LogicalOp/and"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//LogicalOp/conjunction"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//MembershipOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//MembershipOp/in"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//MembershipOp/not_in"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//MembershipOp/or"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//MembershipOp/and"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//MembershipOp/conjunction"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//OptimizationMode">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//OptimizationMode/minimize"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//OptimizationMode/maximize"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//OptimizationMode/solve"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//Quantifier">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//Quantifier/forAll"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//RelationalOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/greaterThanOrEqualTo"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/lessThan"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/lessThanOrEqualTo"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/equalTo"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//RelationalOp/notEqualTo"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//SetOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//SetOp/symdiff"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//SetOp/diff"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//SetOp/union"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//SetOp/inter"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="OPLmetamodel.ecore#//UnaryOp">
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//UnaryOp/unaryMinus"/>
+      <genEnumLiterals ecoreEnumLiteral="OPLmetamodel.ecore#//UnaryOp/negate"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="OPLmetamodel.ecore#//Identifier"/>
+    <genDataTypes ecoreDataType="OPLmetamodel.ecore#//Timepoint"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//AbstractBinaryOperator"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//AbstractType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ActivityDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ActivityDeclaration/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//ActivityDeclaration/earliestStartTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//ActivityDeclaration/latestEndTime"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//AggregateExp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//AggregateExp/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//AggregateExp/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//AggregateExp/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//AllExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//AllExpression/qualifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//AllExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ArrayDereference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArrayDereference/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArrayDereference/index"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ArraySlotConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArraySlotConstraint/target"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArrayType/baseType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArrayType/subscripts"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ArrayValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ArrayValue/items"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Assertion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Assertion/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//BinaryExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//BinaryExpression/rhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//BinaryExpression/op"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BinaryOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//BinaryOperator/op"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BindingRef"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BlockExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//BlockExpression/blocks"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BooleanBlock"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BooleanExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//BooleanExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BooleanType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//BuiltInFunction"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//CollectionExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//CollectionExpression/isUnique"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Constraint/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Constraint/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Comprehension"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//CumulativeFunction"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//DataDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DataDeclaration/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DataDeclaration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//DataDeclaration/isDecisionVar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//DataDeclaration/isDecisionExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DataDeclaration/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DataDeclaration/valueConstraint"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//DataInitMethods"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//DataObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//DataObject/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//DataRef"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Declaration/order"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//DeferredInit"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//DefinedType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//DisplayInstruction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DisplayInstruction/exps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//DisplayInstruction/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//EnumerationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//EnumerationType/redefinedBaseType"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//EnumLiteral"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Entity"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Error"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//Expression"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FloatRangeType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FloatType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FormalParameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//FormalParameter/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//FormalParameter/boundVars"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//FormalParameter/isOrdered"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//FormalParameter/require"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Extension">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Extension/exps"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FloatExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//FloatExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ForAllConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ForAllConstraint/qualifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//ForAllConstraint/exps"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Function/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Function/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Function/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//FunctionCall/functionName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//FunctionCall/args"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//FunctionRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//FunctionRef/name"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IfConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfConstraint/test"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfConstraint/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfConstraint/else"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfExpression/test"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfExpression/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IfExpression/else"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//In"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IntegerType"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//Initialization"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Interval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Interval/isOptional"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Interval/bounds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Interval/size"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Interval/intensity"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IntegerExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//IntegerExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IntegerRangeType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//IndexValuePair">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IndexValuePair/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//IndexValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Model/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Model/isConstraintProblem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/constraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/functions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/activities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/assertions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/scheduleInit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/scripts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/settings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/declarations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Model/search"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Number"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//NumericExpression"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//NumericType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Objective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Objective/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Objective/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Objective/isLinearRelaxation"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Operator"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ParameterDeclaration"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//ParameterDomain"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ParameterRef"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//PathDereference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//PathDereference/deref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//PathDereference/base"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//PathExpression"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//PiecewiseExpression"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//PiecewiseLinearFunction"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//PositiveFloatType"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//PrimitiveExpression"/>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//PrimitiveType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//PositiveIntegerType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//QueryUser">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//QueryUser/ask"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RangeExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RangeExpression/lowerLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RangeExpression/upperLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RangeExpression/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//RangeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RangeType/upperBound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RangeType/lowerBound"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ReadFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//ReadFile/path"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Record">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Record/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Record/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Record/isTuple"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RecordField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//RecordField/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RecordField/type"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RecordValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RecordValue/fieldPairs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Reference/name"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ReflectiveFunction"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RelationalExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//RelationalExpression/redefinedOp"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RelationalInit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RelationalInit/bindingVar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RelationalInit/sources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//RelationalInit/relation"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//RelationalOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//RelationalOperator/op"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ResourceDeclaration"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//ScheduleInitialization"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Script/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Script/isMain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Script/statements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="OPLmetamodel.ecore#//ScriptStatement"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//SearchProcedure"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Sequence/intervals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//Sequence/types"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Setting"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//SetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//SetType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//SetType/baseType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//SetType/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//SetValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//SetValue/items"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//StateFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//StateFunction/transitionMatrix"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//StepFunction"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//StringExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//StringExpression/body"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//StringType"/>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//TupleBinding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//TupleBinding/vars"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//UnaryExpression/exp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//UnaryExpression/op"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//VariableBinding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//VariableBinding/vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OPLmetamodel.ecore#//VariableBinding/domain"/>
+    </genClasses>
+    <genClasses ecoreClass="OPLmetamodel.ecore#//Writeln">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Writeln/string"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OPLmetamodel.ecore#//Writeln/arg"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

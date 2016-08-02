@@ -1,0 +1,1569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iso="https://iso15746standard.com"
+	xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+	targetNamespace="https://iso15746standard.com" elementFormDefault="qualified"
+	vc:minVersion="1.1">
+
+	<!-- Complete Process -->
+	<xs:element name="APC-O">
+		<xs:complexType>
+			<xs:sequence>
+
+				<!-- APC Module -->
+				<xs:element name="APCModule" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:Name"/>
+							<xs:element name="Type" fixed="APC"/>
+
+							<!-- Variable Sets -->
+							<xs:element ref="iso:VendorAttributesAPCModule"/>
+							<xs:element name="VariableSets">
+								<xs:complexType>
+									<xs:sequence>
+
+										<!-- Controlled Variables -->
+										<xs:element name="ControlledVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"
+												type="iso:ControlledVariable"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- Manipulated Variables -->
+										<xs:element name="ManipulatedVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"
+												type="iso:ManipulatedVariable"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- Disturbance Variables -->
+										<xs:element name="DisturbanceVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded"
+												minOccurs="0">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"
+												type="iso:DisturbanceVariable"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- Variable Set End -->
+
+							<xs:element ref="iso:EventSet"/>
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- APC Module End -->
+
+				<!-- Soft Sensor Module -->
+				<xs:element name="SoftSensorModule" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:Name"/>
+							<xs:element name="Type" fixed="SoftSensor"/>
+
+							<!-- Variable Sets -->
+							<xs:element ref="iso:VendorAttributesSoftSensorModule"/>
+							<xs:element name="VariableSets">
+								<xs:complexType>
+									<xs:sequence>
+
+										<!-- Input Variables -->
+										<xs:element name="InputVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- Output Variables -->
+										<xs:element name="OutputVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- Variable Set End -->
+
+							<xs:element ref="iso:EventSet"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- Soft Sensor Module End -->
+
+				<!-- Optimization Module -->
+				<xs:element name="OptimizationModule" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:Name"/>
+							<xs:element name="Type" fixed="Optimization"/>
+
+							<!-- Variable Sets -->
+							<xs:element ref="iso:VendorAttributesOptimizationModule"/>
+							<xs:element name="VariableSets">
+								<xs:complexType>
+									<xs:sequence>
+
+										<!-- Dependant Variables -->
+										<xs:element name="DependantVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"
+												type="iso:DependentVariable"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- Independant Variables -->
+										<xs:element name="IndependantVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"
+												type="iso:IndependantVariable"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- State Variables -->
+										<xs:element name="StateVariableSet">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- Variable Set End -->
+
+							<xs:element ref="iso:EventSet"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- Optimization Module End -->
+
+				<!-- Performance Assessment Module -->
+				<xs:element name="PerformanceAssessmentModule" maxOccurs="unbounded">
+
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:Name"/>
+							<xs:element name="Type" fixed="PerformanceAssessment"/>
+							<xs:element name="VendorAttributesPerformanceModule">
+								<xs:complexType>
+									<xs:sequence>
+										<!-- Unknown what to do with these -->
+										<xs:element name="KPISets">
+											<xs:complexType>
+												<xs:sequence>
+												<xs:element name="APCKPISet"/>
+												<xs:element name="SoftSensorKPISets"/>
+												<xs:element name="OptimizationKPISets"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+
+							<!-- Variable Sets -->
+							<xs:element name="VariableSets">
+								<xs:complexType>
+									<xs:sequence>
+
+										<!-- Input Variables -->
+										<xs:element name="InputVariableSet" minOccurs="0">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+										<!-- Output Variables -->
+										<xs:element name="OutputVariableSet" minOccurs="0">
+											<xs:complexType>
+												<xs:all>
+												<xs:element name="Variable" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+
+
+
+
+
+												<xs:element name="VariableAttributeSet">
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? -->
+												<xs:element name="Name" type="xs:string"/>
+												<xs:element name="VariableID" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="DataType" type="xs:string"/>
+												<xs:element name="ModuleType" type="xs:string"/>
+												<xs:element name="Source" type="xs:string"/>
+												<!-- type? -->
+												<xs:element name="EngineeringUnits"
+												type="xs:string"/>
+												<xs:element name="VariableActive"
+												type="xs:boolean"/>
+
+
+												<xs:element name="VariableStatusEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Event" maxOccurs="1"
+												minOccurs="0">
+
+
+
+												<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<!-- type? Urgency of case -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- type? -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VendorAttributesVariableType"/>
+												<xs:element ref="iso:BehaviorSpecificType"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="VariableValueSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="ProcessValue" type="xs:string"/>
+												<xs:element name="Quality" type="xs:float"/>
+												<xs:element name="TimeStamp"
+												type="xs:dateTimeStamp"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:all>
+											</xs:complexType>
+										</xs:element>
+
+
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- Variable Set End -->
+
+							<xs:element ref="iso:EventSet"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- Performance Assessment Module End -->
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Process End -->
+
+
+	<!-- Input Types -->
+	<xs:element name="Type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="APC"/>
+				<xs:enumeration value="SoftSensor"/>
+				<xs:enumeration value="Optimization"/>
+				<xs:enumeration value=""/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="BehaviorSpecificType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="ControlledVariable"/>
+				<xs:enumeration value="ManipulatedVariable"/>
+				<xs:enumeration value="DisturbanceVariable"/>
+				<xs:enumeration value="IndependentVariable"/>
+				<xs:enumeration value="DependentVariable"/>
+				<xs:enumeration value=""/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- Choose which Advance Control Process Module -->
+	<xs:element name="VendorAttributesAPCModule">
+		<xs:complexType>
+			<xs:choice>
+
+				<!-- Choose: MPC Control -->
+				<xs:element name="MatrixMPC">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PredictionHorizon" type="xs:integer"/>
+							<xs:element name="ControlHorizon" type="xs:integer"/>
+							<xs:element name="VendorAttributesMPC"/>
+							<xs:element name="TimeUnits" type="xs:string"/>
+							<!--  Type? Description:Specific points in the ControlHorizon  where MV moves are calculated-->
+							<xs:element name="MoveBlocks"/>
+
+							<!-- Sets of Pairs : Relationship between MC/CV or DV/CV-->
+							<xs:element name="ModelPairs" maxOccurs="unbounded">
+
+								<xs:complexType>
+									<xs:sequence>
+										<!-- Indicated if model is self-regulating relationship or integrating relationship -->
+										<xs:element name="IsIntegrator" type="xs:string"/>
+										<xs:element name="ControlVariable" type="xs:string"/>
+										<xs:element name="ManipulatedVariableOrDisturbanceVariable"
+											type="xs:string"/>
+										<!-- Set of parameters required to express the model there are many different types of models but only two  examples
+										are shown. A Parametric Model Parameter Set includes the prameters needed to fefine a continous-time transfer function. An FIR Model
+										Parameter Set includes the parameters needed to define a finite impulse response (FIR) Model -->
+										<xs:element name="ModelParameterSet" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+
+												<!-- ParametricModeSet -->
+												<xs:element name="ParametricModelSet">
+												<xs:complexType>
+
+												<xs:sequence>
+												<xs:element name="Order" type="xs:integer"/>
+												<xs:element name="Deadtime" type="xs:float"/>
+												<xs:element name="Lead" type="xs:float"/>
+												<xs:element name="Gain" type="xs:float"/>
+												<xs:element name="Tau1" type="xs:float"/>
+												<xs:element name="Tau2" type="xs:float"/>
+												<xs:element name="Zeta" type="xs:float"/>
+												</xs:sequence>
+
+												</xs:complexType>
+
+												</xs:element>
+												<!-- ParametricModeSet End -->
+
+												<!-- FIRParametricSet -->
+												<xs:element name="FIRModelParametrtSet">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Gain" type="xs:float"/>
+												<xs:element name="NumCoefficients" type="xs:float"/>
+												<xs:element name="Coefficient" type="xs:float"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<!-- FIRParametricSet End -->
+
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+
+									</xs:sequence>
+								</xs:complexType>
+
+							</xs:element>
+							<!--  Sets of Pairs End -->
+						</xs:sequence>
+					</xs:complexType>
+
+				</xs:element>
+				<!-- Choose: MPC Control End -->
+
+				<!--  Choose: Expert System Control -->
+				<xs:element name="ExpertSystem">
+					<xs:complexType>
+
+						<xs:sequence>
+							<xs:element name="Rules" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!-- The rule itself is in a vendor-specific format this could be a simple "If temperature
+										X is greater than 500 then open the cooling water valve by 5 percent" or it could be a more
+										complex combination of if then statements-->
+										<xs:element name="Rule" type="xs:string"/>
+										<!-- Execution Conditions  some execute on a time frequency pther times others when
+										informed that new data is available-->
+										<xs:element name="InitiationCriteria" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+
+					</xs:complexType>
+				</xs:element>
+				<!--  Choose: Expert System Control End -->
+
+				<!--  Choose: Transition Procedure Control -->
+				<xs:element name="TransitionProcedure">
+
+					<xs:complexType>
+						<xs:sequence>
+							<!-- the initial product -->
+							<xs:element name="FromProduct" type="xs:string"/>
+							<!-- the element thats transferred into -->
+							<xs:element name="ToProduct" type="xs:string"/>
+							<!-- the current state of the executing procedure -->
+							<xs:element name="ProcedureStatus" type="xs:string"/>
+							<!--A set of actions that the transition procedure follows -->
+							<xs:element name="Steps" maxOccurs="unbounded">
+
+								<xs:complexType>
+									<xs:sequence>
+										<!-- function the step like "turn on pump" -->
+										<xs:element name="Actions" type="xs:string"/>
+										<!-- signal or logic defining when step is complete by signal ot logic
+											ex:"FeedTankLevel>20% AND PumpingRunning=TRUE-->
+										<xs:element name="CompletionCriteria" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+
+							</xs:element>
+						</xs:sequence>
+
+					</xs:complexType>
+
+				</xs:element>
+				<!--  Choose: Transition Procedure Control End -->
+
+			</xs:choice>
+
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VendorAttributesSoftSensorModule">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- -->
+				<xs:element name="LabAnalyzerValue" type="xs:double"/>
+				<xs:element name="LabAnalyzerTimeStamp" type="xs:dateTimeStamp"/>
+				<xs:element name="CalculationStatus" type="xs:double"/>
+
+				<xs:choice>
+					<!-- type? -->
+					<!-- how to write equations
+					based off one or more equatons typically based off on physical relationships like materials or energy balance-->
+					<xs:element name="Equation">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" minOccurs="1" name="EquationSet">
+									<xs:complexType>
+										<xs:sequence>
+											<!-- type? -->
+											<xs:element name="InputConditioning" type="xs:string"/>
+											<!-- type? -->
+											<xs:element name="Equations" maxOccurs="unbounded"
+												type="xs:string"/>
+											<!-- type? -->
+											<xs:element name="BiasCorrection" type="xs:double"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+
+					<!-- Decription: An emprical modeling technique based off neurons -->
+					<xs:element name="NeuralNetwork">
+						<xs:complexType>
+							<xs:sequence>
+								<!-- type? -->
+								<xs:element name="InputConditioning" type="xs:string"/>
+								<!-- type? -->
+								<xs:element name="NetworkDefinition" type="xs:string"/>
+								<!-- type? -->
+								<xs:element name="BiasCorrection" type="xs:double"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+
+				</xs:choice>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VendorAttributesOptimizationModule">
+		<xs:complexType>
+			<xs:choice>
+				<!-- Objective functions minimized using steady state process models. The path it takes to achieve optimization
+					is not considered-->
+				<xs:element name="SteadyStateOpt">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- type? -->
+							<xs:element name="OptimizerStatus" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="DataReconcilation"/>
+							<!-- type? -->
+							<xs:element name="SteadyStateSelection"/>
+							<!-- type? -->
+							<xs:element name="ObjectiveFunction" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="ModelConstraintsSet">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Constraint" type="xs:string"
+											maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<!-- type? -->
+							<xs:element name="Solver"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- Minimized over a fixed horizon using dynamic process models. Both and the final steady states conditions are 
+						considered in the solution -->
+				<xs:element name="DynamicOpt">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- type? -->
+							<xs:element name="Horizon" type="xs:int"/>
+							<!-- type? -->
+							<xs:element name="TimeUnits" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="OptimizerStatus" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="InputConditioning" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="ObjectiveFunction" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="Models" maxOccurs="unbounded"/>
+							<!-- type? -->
+							<xs:element name="ConstraintsSet"/>
+							<!-- type? -->
+							<xs:element name="Solver"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- Determined by a set of rules simular to if-then-else logic. THey might be embeded and used by the rules
+					but thesemodels are not the fundamental basis for determining optimum conditions-->
+				<xs:element name="ExpertSystemOpt">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- type? -->
+							<xs:element name="InputConditioning" type="xs:string"/>
+							<xs:element name="Rules" form="qualified" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!-- type? -->
+										<xs:element name="Rule" type="xs:string"/>
+										<!-- type? -->
+										<xs:element name="InitiationCriteria" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Events -->
+	<xs:element name="EventSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Event" maxOccurs="unbounded">
+
+					<xs:complexType>
+						<xs:sequence>
+							<!-- type? A reference to the object that generated the event -->
+							<xs:element name="Source" type="xs:string"/>
+							<xs:element name="Type" type="xs:string"/>
+							<!-- type? Urgency of case -->
+							<xs:element name="Severity" type="xs:int"/>
+							<xs:element name="Time" type="xs:time"/>
+							<!-- Process Events or System Events -->
+							<xs:element name="EventCategory" type="xs:string"/>
+							<xs:element name="VendorAttributeEvents"/>
+							<!-- type? -->
+							<xs:element name="TrackingEvent"/>
+							<xs:element name="ConditionEvent">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element form="qualified" name="ConditionName"
+											type="xs:Name"/>
+										<xs:element name="NewState" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+
+				</xs:element>
+			</xs:sequence>
+
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Performance Statistics-->
+	<xs:element name="PerformanceStatistics">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="0">
+				<xs:element name="TimeBasis" type="xs:string"/>
+				<xs:element name="Value" type="xs:string"/>
+				<xs:element name="VendorAttributesPerformance"/>
+			</xs:sequence>
+
+		</xs:complexType>
+	</xs:element>
+
+
+
+	<!-- Varaibles -->
+	<xs:element name="PIDLoop">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PIDAlarm"/>
+				<xs:element name="Mode">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Manual"/>
+							<xs:element name="Auto"/>
+							<xs:element name="Remote"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProcessValue" type="xs:int"/>
+				<xs:element name="Setpoint"/>
+				<xs:element name="RemoteSetpoint"/>
+				<xs:element name="SetpointLimits">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Minimum"/>
+							<xs:element name="Maximum"/>
+							<xs:element name="RateOfChange"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Output"/>
+				<xs:element name="TrackingFlags"/>
+				<xs:element name="OutputLimits">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Minimum" type="xs:int"/>
+							<xs:element name="Maximum" type="xs:int"/>
+							<xs:element name="RateOfChange" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FinalControlElement">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FinalElementAlarms"/>
+				<xs:element name="Output"/>
+				<xs:element name="RemoteOutput"/>
+				<xs:element name="Mode">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Manual"/>
+							<xs:element name="Remote"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OutputLimits">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="Manual"/>
+							<xs:element name="Auto"/>
+							<xs:element name="Remote"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TrackingFlags"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Variable">
+		<xs:complexType>
+			<xs:sequence>
+
+				<xs:element name="VariableAttributeSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="VariableID" type="xs:string"/>
+							<xs:element name="DataType" type="xs:string"/>
+							<xs:element name="ModuleType" type="xs:string"/>
+							<!-- type? -->
+							<xs:element name="Source" type="xs:string"/>
+							<xs:element name="EngineeringUnits" type="xs:string"/>
+							<xs:element name="VariableActive" type="xs:boolean"/>
+							<!-- type? -->
+							<xs:element name="VariableStatusEvent">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Event" maxOccurs="1" minOccurs="0">
+
+											<xs:complexType>
+												<xs:sequence>
+												<!-- type? A reference to the object that generated the event -->
+												<xs:element name="Source" type="xs:string"/>
+												<xs:element name="Type" type="xs:string"/>
+												<!-- type? Urgency of case -->
+												<xs:element name="Severity" type="xs:int"/>
+												<xs:element name="Time" type="xs:time"/>
+												<!-- Process Events or System Events -->
+												<xs:element name="EventCategory" type="xs:string"/>
+												<xs:element name="VendorAttributeEvents"/>
+												<!-- type? -->
+												<xs:element name="TrackingEvent"/>
+												<xs:element name="ConditionEvent">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element form="qualified" name="ConditionName"
+												type="xs:Name"/>
+												<xs:element name="NewState" type="xs:string"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="VendorAttributesVariableType"/>
+
+
+							<xs:element ref="iso:BehaviorSpecificType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="VariableValueSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ProcessValue" type="xs:string"/>
+							<xs:element name="Quality" type="xs:float"/>
+							<xs:element name="TimeStamp" type="xs:dateTimeStamp"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ControlledVariable">
+		<xs:sequence>
+			<!-- type? adjustment to the model based on plant feedback-->
+			<xs:element name="Bias" type="xs:float"/>
+			<xs:element name="Target" type="xs:double"/>
+			<xs:element name="MinimumSoftLimit" type="xs:double"/>
+			<xs:element name="MaximumSoftLimit" type="xs:double"/>
+			<xs:element name="Price" type="xs:double"/>
+			<!-- Scaling used to determine the relative importance of a deviation from target or limits -->
+			<xs:element name="OptimizationScale" type="xs:float"/>
+			<xs:element maxOccurs="unbounded" minOccurs="1" ref="iso:PerformanceStatistics"/>
+			<xs:element name="VendorAttributesVariable"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ManipulatedVariable">
+		<xs:sequence>
+			<!-- type? Set point of source -->
+			<xs:element name="Setpoint" type="xs:string"/>
+			<!-- Source in Remote Description: flag indicating source is remote -->
+			<xs:element name="SourceInRemote" type="xs:double"/>
+			<xs:element name="RateOfChangeLimit" type="xs:double"/>
+			<xs:element name="MoveSuppression" type="xs:double"/>
+			<xs:element name="MinimumHardLimit" type="xs:double"/>
+			<xs:element name="MaximumHardLimit" type="xs:double"/>
+			<xs:element name="Price" type="xs:double"/>
+			<xs:element name="OptimizationScale" type="xs:float"/>
+			<xs:element maxOccurs="unbounded" ref="iso:PerformanceStatistics"/>
+			<xs:element name="VendorAttributesVariable"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DisturbanceVariable">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="iso:PerformanceStatistics"/>
+			<xs:element name="VendorAttributesVariable"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DependentVariable">
+		<xs:sequence>
+			<!-- type? -->
+			<xs:element name="Bias" type="xs:float"/>
+			<xs:element name="Target" type="xs:double"/>
+			<xs:element name="MinimumLimit" type="xs:double"/>
+			<xs:element name="MaximumLimit" type="xs:double"/>
+			<xs:element name="Price" type="xs:double"/>
+			<xs:element name="OptimizationScale" type="xs:float"/>
+			<xs:element maxOccurs="unbounded" ref="iso:PerformanceStatistics"/>
+			<xs:element name="VendorAttributesVariable"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="IndependantVariable">
+		<xs:sequence>
+			<!-- type? -->
+			<xs:element name="Setpoint" type="xs:string"/>
+			<xs:element name="MinimumLimit" type="xs:double"/>
+			<xs:element name="MaximumLimit" type="xs:double"/>
+			<xs:element name="Price" type="xs:double"/>
+			<xs:element name="OptimizationScale" type="xs:float"/>
+			<xs:element maxOccurs="unbounded" ref="iso:PerformanceStatistics"/>
+			<xs:element name="VendorAttributesVariable"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+
+
+
+</xs:schema>
